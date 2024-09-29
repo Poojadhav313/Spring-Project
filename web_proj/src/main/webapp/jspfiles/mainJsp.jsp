@@ -8,5 +8,10 @@
 </head>
 <body>
 	<h1>heading</h1>
+	<form action="/add" method="post">
+		<input type ="text" name="text" required>
+		<button type="submit">Submit</button>
+	</form>
+	
 </body>
 </html>
