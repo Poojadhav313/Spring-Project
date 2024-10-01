@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 //import org.springframework.web.bind.annotation.RestController;
 
@@ -25,9 +26,9 @@ public class MyController {
 	
 	
 	@PostMapping("/add")
-	public String adding()
+	public String adding(@RequestParam String task)
 	{
-		service.addModel();
+		service.addModel(task);
 		return "redirect:/";
 	}
 	
@@ -35,6 +36,6 @@ public class MyController {
 	public String displaying()
 	{
 		service.displayModel();
-		return "redirect:/";
+		return "displayJsp";
 	}
 }

@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>heading</h1>
-	<form action="/add" method="post">
-		<input type ="text" name="task" required>
-		<button type="submit">Submit</button>
-	</form>
-	
+	<h1>Todo list</h1>
 </body>
 </html>

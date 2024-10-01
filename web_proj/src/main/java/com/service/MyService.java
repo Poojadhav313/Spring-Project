@@ -12,9 +12,9 @@ public class MyService {
 		
 	}
 	
-	public void addModel()
+	public void addModel(String task)
 	{
-		model.add(new TodoModel("newmodeladded"));
+		model.add(new TodoModel(task));
 	}
 
 	public void displayModel() {
