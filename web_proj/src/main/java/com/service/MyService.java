@@ -3,10 +3,12 @@ package com.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.ui.Model;
+
 import com.model.TodoModel;
 
 public class MyService {
-	static List<TodoModel> model = new ArrayList<>();
+	static List<TodoModel> Todo = new ArrayList<>();
 	
 	static {
 		
@@ -14,14 +16,12 @@ public class MyService {
 	
 	public void addModel(String task)
 	{
-		model.add(new TodoModel(task));
+		Todo.add(new TodoModel(task));
 	}
 
-	public void displayModel() {
-		for(TodoModel tm: model)
-		{
-			System.out.println(tm.getTask());
-		}
-		
+	public Model displayModel(Model model) {
+		List<TodoModel> tasks = TodoModel.getTask();
+		model.addAttribute("tasks", tasks);
+		return model;
 	}
 }
