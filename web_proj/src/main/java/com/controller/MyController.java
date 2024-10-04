@@ -33,10 +33,11 @@ public class MyController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/display")
+	@RequestMapping("/display")
 	public String displaying(Model model)
 	{
-		model = service.displayModel(model);
-		return "displayJsp";
+		//model = 
+		service.displayModel(model);
+		return "a";
 	}
 }

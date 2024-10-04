@@ -20,8 +20,8 @@ public class MyService {
 	}
 
 	public Model displayModel(Model model) {
-		List<TodoModel> tasks = TodoModel.getTask();
-		model.addAttribute("tasks", tasks);
+		//List<TodoModel> tasks = TodoModel.getTasks();
+		model.addAttribute("tasks", Todo);
 		return model;
 	}
 }

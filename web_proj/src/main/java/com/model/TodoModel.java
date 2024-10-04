@@ -1,5 +1,8 @@
 package com.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TodoModel {
 	private String task;
 	
@@ -16,9 +19,19 @@ public class TodoModel {
 		this.task = task;
 	}
 	
-	public String getTask()
+	 public String getTask() 
+	 {
+	        return task;
+	 }
+	
+	public List<TodoModel> getTasks()
 	{
-		return task;
+		List<TodoModel> tasks = new ArrayList<>();
+        // Add some dummy tasks for demonstration
+        tasks.add(new TodoModel("Task 1"));
+        tasks.add(new TodoModel("Task 2"));
+		
+		return tasks;
 	}
 	
 }
