@@ -1,17 +1,12 @@
 package com.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-//import org.springframework.web.bind.annotation.RestController;
-
 import com.service.MyService;
+
 
 @Controller
 public class MyController {
@@ -19,25 +14,27 @@ public class MyController {
 	//@Autowired
 	MyService service = new MyService();
 	
-	@RequestMapping("")
-	public String call()
+	@GetMapping("")
+	public String call(Model model)
 	{
+		model.addAttribute("tasks", service.getModel());
 		return "mainJsp";
 	}
 	
 	
 	@PostMapping("/add")
-	public String adding(@RequestParam String task)
+	public String adding(@RequestParam String task, Model model)
 	{
 		service.addModel(task);
 		return "redirect:/";
 	}
+
 	
-	@RequestMapping("/display")
-	public String displaying(Model model)
-	{
-		//model = 
-		service.displayModel(model);
-		return "a";
-	}
+	/*
+	 * @GetMapping("") 
+	 * public String displaying(Model model) {
+	 * model.addAttribute("tasks", service.getModel()); 
+	 * return "mainJsp"; }
+	 */
+	
 }
