@@ -14,16 +14,16 @@
 
 </head>
 <body>
-	<h1 id="heading">ToDo List</h1>
+	<h1 id="heading">To Do List</h1>
 	
 	<form action="/add" method="post">
 		<input type="text" name="task" class="input-field" placeholder="Enter Task..." required autofocus>
-		<button type="submit" id="submit-btn">Submit</button>
+		<button type="submit" id="submit-btn">Add</button>
 	</form>
 	
 	<br>
 	
-	<h2>Tasks:</h2>
+<!-- 	<h2>Tasks:</h2>		-->
 
 	<ul id="list-ul">
         <%
