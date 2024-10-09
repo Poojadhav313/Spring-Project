@@ -17,7 +17,7 @@
 	<h1 id="heading">To Do List</h1>
 	
 	<form action="/add" method="post">
-		<input type="text" name="task" class="input-field" placeholder="Enter Task..." required autofocus>
+		<input type="text" name="task" class="input-field" placeholder="Enter Task..." maxlength = "80" required autofocus>
 		<button type="submit" id="submit-btn">Add</button>
 	</form>
 	
