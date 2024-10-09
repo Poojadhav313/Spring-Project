@@ -29,8 +29,9 @@
         <%
 
             List<TodoModel> tasks = (List<TodoModel>) request.getAttribute("tasks");
-            if (tasks != null) {
-                for (TodoModel task : tasks) {
+	        if (tasks != null && !tasks.isEmpty()) {
+	            for (int i = tasks.size() - 1; i >= 0; i--) {
+	                TodoModel task = tasks.get(i);
         %>
                     <li><%= task.getTask() %></li> 
         <%
