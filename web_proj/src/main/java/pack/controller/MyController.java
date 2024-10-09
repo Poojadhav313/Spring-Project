@@ -1,11 +1,12 @@
-package com.controller;
+package pack.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.service.MyService;
+
+import pack.service.MyService;
 
 
 @Controller

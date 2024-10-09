@@ -1,4 +1,4 @@
-package com.model;
+package pack.model;
 
 public class TodoModel {
 	private String task;

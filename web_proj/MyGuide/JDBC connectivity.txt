@@ -1,0 +1,64 @@
+MySQL connectivity process
+
+1. install MySQL and create user, database, table
+
+2. Add mysql-connector.jar file in as follows
+	a. Download zip from (https://dev.mysql.com/downloads/connector/j/) and unzip it
+	b. STS -> window -> show view -> Project Explorer
+	c. in Project Explorer right click on project -> Build Path -> Configure Build Path -> select Modulepath -> Add External JARs -> select jar file
+	d. Apply -> Apply and Close
+
+3. Add following mysql-connector-java dependency in "pom.xml" :
+	"""
+	<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.30</version>
+	</dependency>
+	"""
+
+4. Add following properties in "application.properties" :
+	""" 
+	spring.datasource.url=jdbc:mysql://localhost:{port}/{db_name}
+	spring.datasource.username={user_name}
+	spring.datasource.password={pass}
+	spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+	"""
+
+5. Create connection as follows:
+	"""
+	try 
+	{
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db1", "root", "root");
+			
+		if(con != null)
+		{
+			System.out.println("Connection established");
+		}
+	}
+	catch(Exception e)
+	{
+		System.out.println(e);
+	}
+	"""
+
+
+---------------------------------------------------------------
+
+
+
+MySQL CLI commands
+
+1. Find current DB
+	-> select database();
+
+2. Find users
+	-> select user();
+
+3. Find port
+	-> show variables like 'port';
+
+
+
+

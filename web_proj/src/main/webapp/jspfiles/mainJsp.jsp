@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@ page import="com.model.TodoModel" %>
+<%@ page import="pack.model.TodoModel" %>
 <%@ page import="java.util.List" %>
 
 <!DOCTYPE html>

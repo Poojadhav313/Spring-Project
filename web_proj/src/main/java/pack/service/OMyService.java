@@ -1,11 +1,11 @@
-package com.service;
+package pack.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.model.TodoModel;
+import pack.model.TodoModel;
 
-public class MyService {
+public class OMyService {
 	static List<TodoModel> Todo = new ArrayList<>();
 	
 	static {}
