@@ -24,18 +24,10 @@ public class MyController {
 	
 	
 	@PostMapping("/add")
-	public String adding(@RequestParam String task, Model model)
+	public String adding(@RequestParam String task)
 	{
 		service.addModel(task);
 		return "redirect:/";
 	}
 
-	
-	/*
-	 * @GetMapping("") 
-	 * public String displaying(Model model) {
-	 * model.addAttribute("tasks", service.getModel()); 
-	 * return "mainJsp"; }
-	 */
-	
 }

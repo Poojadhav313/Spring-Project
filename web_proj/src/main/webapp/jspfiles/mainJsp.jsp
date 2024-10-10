@@ -28,12 +28,12 @@
 	<ul id="list-ul">
         <%
 
-            List<TodoModel> tasks = (List<TodoModel>) request.getAttribute("tasks");
-	        if (tasks != null && !tasks.isEmpty()) {
+            List<String> tasks = (List<String>) request.getAttribute("tasks");
+	        if (!tasks.isEmpty()) {
 	            for (int i = tasks.size() - 1; i >= 0; i--) {
-	                TodoModel task = tasks.get(i);
+	                
         %>
-                    <li><%= task.getTask() %></li> 
+                    <li><%= tasks.get(i) %></li> 
         <%
                 }
             } else {

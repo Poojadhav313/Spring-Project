@@ -32,11 +32,28 @@ public class MyService {
 	
 	public void addModel(String task)
 	{
-		Todo.add(new TodoModel(task));
+		 Todo.add(new TodoModel(task));	 
 	}
 
-	public List<TodoModel> getModel() 
+	public List<String> getModel() 
 	{
-		  return Todo;
+		List<String> newlist = new ArrayList<>();
+		
+		try {
+			
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from todotable");
+			
+			while(rs.next())
+			{
+				newlist.add(rs.getString("taskname"));
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+		return newlist;
 	}
 }
