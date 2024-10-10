@@ -28,11 +28,21 @@ public class MyService {
 		}
 	}
 		
-	static List<TodoModel> Todo = new ArrayList<>();
 	
 	public void addModel(String task)
 	{
-		 Todo.add(new TodoModel(task));	 
+		try {
+			String sql = "insert into todotable(taskname) values (?)";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, task);
+			
+			int x = pst.executeUpdate();
+			System.out.println("one row added");
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}	
 	}
 
 	public List<String> getModel() 
